@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>  
+</head>
+<body>
+    
+    <script>
+/*
+        const frutas = ["Manzana","uva","platano","mango"];
+
+        for(let i = 0; i < frutas.length; i++){
+             console.log(frutas[i]);
+        }
+
+        */
+/*
+        console.log(frutas[0]);
+*/let frutasUsuario = [];
+
+while(true){
+   let usuario = prompt("Ingresa una fruta (o escribe 'fin')");
+   if(usuario === "fin") break;
+
+   frutasUsuario.push(usuario);
+}
+            
+
+        
+             
+
+             
+
+            let opcion = prompt("quieres ver tu carrito ? ");
+
+
+             if(opcion === "si"){
+              /*  console.log(frutasUsuario);  */
+              for(let i = 0; i <frutasUsuario.length ; i ++){
+                console.log(frutasUsuario[i]);
+
+              }
+              }else{    }
+
+              let eliminarFruta = prompt("quieres eliminar alguna fruta (si/no) "+ " tus frutas son   "+ frutasUsuario);
+              if(eliminarFruta.toLowerCase() === "si"){
+                let frutaABorrar = prompt("¿Qué fruta quieres eliminar?");
+                  frutasUsuario = frutasUsuario.filter(item=> item.toLowerCase() !== frutaABorrar.toLowerCase());
+  console.log("Ha sido eliminada la fruta: " + frutaABorrar + " de tu carrito.");
+                  
+              }else{
+                console.log("no se elimino ninguna fruta");
+              }
+
+         
+              console.log("Tu carrito "+ frutasUsuario.join(", "));    
+    </script>
+
+</body>
+</html>

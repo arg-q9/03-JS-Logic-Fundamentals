@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+         function iniciarApp() {
+
+  const quiereJugar = confirm("¿Quieres iniciar el minijuego?");
+
+  if (!quiereJugar) {
+    console.log("Juego cancelado. ¡Hasta la próxima!");
+    return; 
+  }
+   console.log("¡Iniciando juego...!");
+   return true;
+}
+
+          function JugarRonda(numeroRonda){
+            let NumeroAleatorio1 = Math.floor(Math.random()*500);
+            let NumeroAleatorio2 = Math.floor(Math.random()*500);
+
+            let result1 = NumeroAleatorio1;
+             let result2 = NumeroAleatorio2;
+
+             console.log(`---Ronda ${numeroRonda}---`);
+             console.log(`Numero 1 :` + NumeroAleatorio1);
+             console.log(`Numero 2 :` + NumeroAleatorio2);
+             
+             
+             let OpcionUsuario;
+
+             while(true){
+               OpcionUsuario = parseInt(prompt(`Ronda ${numeroRonda} \n1. El primero (${NumeroAleatorio1})\n2. El segundo (${NumeroAleatorio2})\n\n¿Cuál es el mayor? (Escribe 1 o 2)`));
+                if (!isNaN(OpcionUsuario) && (OpcionUsuario === 1 || OpcionUsuario === 2)) {
+                break;
+            }
+            
+            alert("⚠️ Error: Por favor, escribe solo el número 1 o el número 2.");
+        }
+
+        let respuestaCorrecta = (NumeroAleatorio1 > NumeroAleatorio2) ? 1 : 2;
+        if (OpcionUsuario === respuestaCorrecta) {
+            console.log("✅ ¡Correcto!");
+        } else {
+            console.log("❌ Incorrecto.");
+        }
+    }
+
+    function iniciarJuego() {
+        if (iniciarApp()) {
+            for (let i = 0; i < 5; i++) {
+                JugarRonda(i + 1);
+            }
+            console.log("--- FIN DEL JUEGO ---");
+        }
+    }
+
+    iniciarJuego();
+    
+            
+    </script>
+</body>
+</html>

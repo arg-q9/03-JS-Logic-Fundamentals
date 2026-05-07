@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Input DOM</title>
+</head>
+<body>
+  <h1>Escribe tu nombre</h1>
+  <input type="text" class="entrada">
+  <p class="resultado"></p>
+
+  
+
+  <script>
+    const ert = document.querySelector(".entrada");
+    const r = document.querySelector(".resultado");
+
+    ert.addEventListener("input",function(){
+        if(ert.value === ""){
+            r.textContent = "No has escrito nada"
+
+        }else{
+        
+        r.textContent = "hola "+ert.value;
+        }
+    });
+
+
+
+    
+  </script>
+</body>
+</html>

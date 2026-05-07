@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM toggle</title>
+</head>
+<body>
+    <style>
+        .body{
+            background-color: white;
+        }
+        .h1{
+            color: black;
+        }
+        .Fondo_nuevo{
+            background-color: grey;
+        }
+
+        .Fondo_nuevo h1{
+            color: aliceblue;
+        }
+
+    </style>
+
+    <h1 class="texto">hola</h1>
+    <button class="btn">Haz click</button>
+
+    <script>
+        const texto = document.querySelector(".texto");
+        const boton = document.querySelector(".btn");
+        const body = document.body;
+
+        boton.addEventListener("click",function(){
+            body.classList.toggle("Fondo_nuevo");
+
+            if(body.classList.contains("Fondo_nuevo")){
+                texto.textContent = "Ya entendi por fin el Toggle";
+
+            }else{
+                texto.textContent="hola";
+            }
+
+        });
+
+
+    </script>
+
+
+</body>
+</html>

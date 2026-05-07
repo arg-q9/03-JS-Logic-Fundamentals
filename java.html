@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let puntosUsuario = 0;
+        let puntosPC = 0;
+         
+        console.log("quien llegue a 5 puntos primero  gana!!");
+
+         function getComputerChoice() {
+            const aleatorio = Math.floor(Math.random()*3);
+        if(aleatorio == 0){
+            return "piedra";
+        }else if(aleatorio == 1){
+           
+            return "papel";
+        }else{
+           
+            return "tijera";
+        }
+    }
+
+    
+
+    for(let i = 0;  i< 5; i++){
+        let hayGanadorRonda = false;
+         console.log(`--- Ronda ${i + 1} ---`);
+  
+         
+        let result = getComputerChoice();
+    let eleccion = prompt("elige piedra ,papel o tijera");
+    let eleccion1 = eleccion.toLowerCase();
+
+    if(eleccion1 === result){
+        console.log("Empate ambos eligieron :" + result+ "repiten ronda");
+        
+
+    }else if(eleccion1 === "piedra" && result === "tijera"){
+        console.log("Ganaste piedra vence a tijera !!"+ "ganaste un punto");
+        puntosUsuario++;
+    }else if(eleccion1 === "piedra" && result === "papel"){
+              console.log("perdiste papel vence a piedra");
+              puntosPC++;
+    }else if(eleccion1 === "papel" && result === "piedra"){
+          console.log("ganaste papel vence a piedra "+"ganaste un punto");
+          puntosUsuario++;
+    }else if(eleccion1 === "tijera" && result === "papel"){
+        console.log("ganaste tijeras ganan a papel "+"ganaste un punto");
+        puntosUsuario++;
+    }else if (eleccion1 === "papel" && result === "tijera"){
+        console.log("perdiste papel es vencido por tijeras");
+        puntosPC++;
+    }else if(eleccion1 === "tijera" && result === "piedra"){
+       console.log("perdiste tijeras pierden contra piedra");
+       puntosPC++;
+    }else{
+        console.log("perdiste la compu eligio :" + result);
+        puntosPC++;
+    }
+}
+
+ console.log("Marcador final Usuario : " + puntosUsuario + " puntos PC : " + puntosPC + " el ganador es : ");
+ if(puntosUsuario >= puntosPC){
+ console.log("ganador Usuario");
+ }else{
+    console.log("ganador pc");
+ }
+   
+
+    </script>
+    
+</body>
+</html>

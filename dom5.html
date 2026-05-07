@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contador</title>
+</head>
+<body>
+    <style>
+        .rojo {
+            color: red;
+        }
+    </style>
+  <h1>Escribe algo</h1>
+  <textarea class="texto"></textarea>
+  <p class="contador">Caracteres: 0</p>
+
+  <script>
+    const texto = document.querySelector(".texto");
+    const con = document.querySelector(".contador");
+
+    texto.addEventListener("input",function(){
+      if (texto.value.length === 0 ){
+        con.textContent = "No has escrito nada";
+        con.classList.remove("rojo");
+
+      }else if(texto.value.length  >=20){
+        con.classList.add("rojo");
+        con.textContent = "Contador : " + texto.value.length;
+
+
+
+      }else if(texto.value.length){
+
+       
+        con.textContent = "Contador : " + texto.value.length;
+        con.classList.remove("rojo");
+       
+      }
+
+      
+
+    });
+
+    
+  </script>
+</body>
+</html>

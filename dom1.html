@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        body {
+            background-color: white;
+        }
+
+        h1 {
+            color: black;
+        }
+
+        .oscuro {
+            background-color: black;
+        }
+
+        .oscuro h1 {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="texto">Modo normal</h1>
+    <button class="btn">Cambiar modo</button>
+
+    <script>
+        const texto = document.querySelector(".texto");
+        const btn = document.querySelector(".btn");
+        const body = document.body;
+
+        btn.addEventListener("click", function () {
+            body.classList.toggle("oscuro");
+
+            if (body.classList.contains("oscuro")) {
+                texto.textContent = "Modo oscuro";
+            } else {
+                texto.textContent = "Modo normal";
+            }
+        });
+    </script>
+</body>
+</html>

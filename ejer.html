@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+         let num = [1,2,3,4,5,6,7,8];
+
+         num = num.map(num => num*2);
+         console.log(num);
+        */
+        
+        /*
+        let numeros = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
+
+         numeros = numeros.filter(item => item % 2 === 0);
+         
+         console.log(numeros);
+        */
+
+        /*
+        let num = [12,45,56,78,34,789,45];
+
+        let resultado = num.find(item => item > 50);
+        console.log(resultado);
+        */
+
+        /*
+        const nombres = ["carlos","ana","luis"];
+        nombresTo = nombres.map(item => item.toUpperCase());
+        console.log(nombresTo);
+        */
+
+        /*
+        let palabras = ["Cacahuate","carlos","angelito","coco"];
+        let resultado = palabras.filter(p => p.length >5);
+        console.log(resultado);
+        */
+
+        /*
+        let num = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,25];
+        let sum=0;
+       for(const n of num){
+         sum +=n;
+         
+        }
+        console.log(sum);
+        */
+
+        /*
+        let num = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,25];
+        const total = num.reduce((acc, n) => acc * n, 1);
+        console.log(total);
+        */
+
+         
+
+        /*    let resultado = alumnos.find(a => a.cal >7);*/
+       /* let resultado = alumnos.filter(a => a.cal >7);*/
+   
+   /* const alumnos = [
+             {nombre:"Carlos", cal:9},
+             {nombre:"Ana", cal:6},
+             {nombre:"Luis", cal:8}
+            ];
+   
+   let r = alumnos.reduce((cnn,alumnos) => cnn + alumnos.cal,0 )/alumnos.length;
+
+            console.log(r);
+
+
+        */
+/*
+const alumnos = [
+             {nombre:"Carlos", cal:9},
+             {nombre:"Ana", cal:6},
+             {nombre:"Luis", cal:8}
+            ];
+
+      let r = alumnos.map(a => a.nombre);
+      console.log(r);
+      */ 
+     
+      /*
+      const alumnos = [
+             {nombre:"Carlos", cal:9},
+             {nombre:"Ana", cal:6},
+             {nombre:"Luis", cal:8}
+            ];
+
+            let r = alumnos.some(a => a.nombre === "Carlos");
+            console.log(r);
+*/
+
+/*
+            let carrito = [
+ {producto:"manzana", precio:10},
+ {producto:"pan", precio:25},
+ {producto:"leche", precio:18}
+];
+let suma=0;
+
+     let c = carrito.reduce((cnn,carrito) =>cnn + carrito.precio,0);
+/*
+                for(let n of carrito){
+                    suma += n.precio;
+                    }
+
+                    console.log(carrito);
+ /*                   */
+        
+  const productos = [
+  { id: 1, nombre: "Mouse Gamer", precio: 450 },
+  { id: 2, nombre: "Teclado Mecánico", precio: 1200 },
+  { id: 3, nombre: "Monitor 24'", precio: 3500 },
+  { id: 4, nombre: "Audífonos Bluetooth", precio: 800 },
+  { id: 5, nombre: "Webcam HD", precio: 950 },
+  { id: 6, nombre: "Pad para Mouse XL", precio: 300 },
+  { id: 7, nombre: "Silla Gamer", precio: 4200 },
+  { id: 8, nombre: "Micrófono USB", precio: 1500 },
+  { id: 9, nombre: "Hub USB-C", precio: 600 },
+  { id: 10, nombre: "Cable HDMI 2.0", precio: 250 }
+];
+   
+
+ console.table(productos)
+const listaTexto = productos.map(p => `${p.id}.- ${p.nombre} ($${p.precio})`).join("\n");
+ let carrito = []; 
+
+ while(true){
+
+const seleccion = prompt("Escribe el ID de los productos que quieres elegir:(o escribe 'fin')\n\n" + listaTexto);
+
+if(seleccion === "fin") break;
+const productoElegido = productos.find(p => p.id == seleccion);
+   
+
+
+
+
+
+
+
+
+
+ }
+ function añadirAlCarrito(producto) { 
+    if (producto) {
+        carrito.push(producto);
+       
+        console.log(`${producto.nombre} añadido al carrito.`);
+        console.table(carrito);
+    } else {
+        alert("Producto no encontrado");
+    }
+}
+
+añadirAlCarrito(productoElegido);
+
+ function verCarrito(){
+
+      let c = prompt("QUIERES VER TU CARRITO (si/no)");
+     if (c && c.toLowerCase() === "si"){ 
+        console.table(carrito);
+     }
+}
+ verCarrito();
+
+
+ function eliminarPro(){
+      let opciones = prompt("Deseas eliminar algun prodcuto(si/no)");
+      if(opciones && opciones.toLowerCase() === "si"){
+        let opciones2 = Number(prompt("escribe el id del prodcuto que desees eliminar"));
+        let carritoActualizado  = carrito.filter(item => item.id !==opciones2 );
+        if (carrito.length === carritoActualizado.length) {
+            alert("Ese ID no estaba en tu carrito.");
+        } else {
+           
+            carrito = carritoActualizado; 
+            console.log("Producto eliminado. Tu carrito ahora es:");
+            console.table(carrito);
+        }
+
+      }
+
+ }
+ eliminarPro();
+    </script>
+</body>
+</html>
